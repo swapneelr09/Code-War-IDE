@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 declare var ace : any;
-declare var require : any;
 
 @Component({
   selector: 'app-editor',
@@ -22,13 +21,19 @@ export class EditorComponent implements OnInit {
   openInput : any = {};
   showInput = false;
   sessionStore :  any = []
+  sessionRow: any;
   constructor() { }
 
   ngOnInit() {
     this.editor = ace.edit("editor");
+    this.EditSession = ace.EditSession;
+    
     this.editor.setTheme("ace/theme/"+this.activeTheme);
+    
     this.curTheme = this.activeTheme
+    
     this.editor.session.setMode("ace/mode/c_cpp");
+    
     this.editor.commands.addCommand({
       name: "undo",
       exec: this.editor.undo(),
@@ -52,32 +57,39 @@ export class EditorComponent implements OnInit {
   }
 
   ngOnChanges(change){
-    //this.EditSession = ace.EditSession;
-    /*this.editor.setTheme("ace/theme/"+this.activeTheme)
+   
+    if('lang' in change){
     this.openInput = this.qs[this.qSelected].samples[0].input;
-    this.EditSession = ace.EditSession;
-    var self = this;
-    this.lang.forEach(function(value){
-        self.sessionStore.push(new this.EditSession(value.code));
-    });
-    this.editor.setSession(this.sessionStore[this.activeLang]);
-    this.editor.session.setMode("ace/mode/"+this.lang[this.activeLang].file);
-    this.editor.on('change', () => {
-      console.log("Hello")
-   });*/
-   /*if(this.curTheme != this.activeTheme){
-    this.editor.setTheme("ace/theme/"+this.activeTheme)
-    this.curTheme = this.activeTheme
-   }*/
+    this.sessionRow = this.qs.length*this.qSelected
+    
+    var self = this
+    this.qs.forEach(function(){
+      self.lang.forEach(function(value){
+        self.sessionStore.push(new self.EditSession(value.code));
+      })
+    })
+   }
+
    if('activeTheme' in change){
     this.editor.setTheme("ace/theme/"+this.activeTheme)
    }
-   /*if(this.sessionStore.length == 0){
-     console.log("Hello")
-   }*/
+
+   if('qSelected' in change){
+    this.openInput = this.qs[this.qSelected].samples[0].input;
+    this.sessionRow = this.qs.length*this.qSelected;
+    this.setEditor()
+   }
+
+   if('activeLang' in change){
+    this.setEditor()
+   }
+
   }
 
-
+  setEditor(){
+    this.editor.setSession(this.sessionStore[parseInt(this.sessionRow) + parseInt(this.activeLang)]);
+    this.editor.session.setMode("ace/mode/"+this.lang[this.activeLang].file);
+  }
   dispInput(event){
     if ( event.target.checked ) {
       this.showInput = true;
