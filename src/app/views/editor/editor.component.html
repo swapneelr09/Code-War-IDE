@@ -1,0 +1,9 @@
+<div class="edit-wrapper" id="editor"></div>
+<div class="bottom-right">
+    <div class="b-r-content">
+        <input type="checkbox" (change)="dispInput($event)">
+        Custom Input
+        <button class="submit-btn">Submit</button>
+    </div> 
+    <div class="cust-input" *ngIf="showInput == true" contenteditable="true">{{openInput}}</div>                 
+</div>

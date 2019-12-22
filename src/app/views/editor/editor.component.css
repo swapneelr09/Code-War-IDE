@@ -1,0 +1,51 @@
+.edit-wrapper{
+    height: 400px;
+    width: 100%;
+    margin-top: 2px;
+}
+.bottom-right{
+    background: #383836;
+    bottom: 0;
+    width: 100%;
+    border-radius: 10px;
+    min-height: 30px;
+    border: 1px solid dodgerblue;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px -5px 5px #888888;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.b-r-content{
+    display: inline;
+    font-family: 'Audiowide', cursive;
+    color: darkgray;
+    font-size: 14px;
+    position: fixed;
+}
+.submit-btn{
+    margin-left: 250px;
+    border: 1px solid snow;
+    color: darkgray;
+    text-decoration: none;
+    padding: 3px 20px;
+    border-radius: 10px;
+    background: #383836;
+    font-family: 'Audiowide', cursive;
+    font-size: 14px;
+}
+.submit-btn:hover{
+    background: snow;
+    color: black;
+}
+.cust-input{
+    background: ghostwhite;
+    width: 100%;
+    margin: 5px 10px;
+    margin-top: 30px;
+    height: 85px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    white-space:pre-wrap;
+    padding-left: 5px;
+}

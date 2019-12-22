@@ -1,0 +1,37 @@
+.problem{
+    margin-top: 50px;
+    margin-left: 46px;
+    height: 91vh;
+    width: 575px;
+    position: fixed;
+    background: ghostwhite;
+    border-radius: 10px;
+    z-index: 1;
+    overflow-y: scroll;
+    white-space:pre-wrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 22px;
+    color: crimson;
+}
+p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.caption{
+    font-weight: bold;
+    color: darkred;
+    font-size: 17px;
+}
+
+.content{
+    font-size: 14px;
+}
+.content > p{
+    margin: -20px;
+}

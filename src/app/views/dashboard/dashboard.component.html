@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="top-nav">
+        <ul class="nav-content">
+                <li class="title">CODE WAR</li>
+                <li style="letter-spacing: 5px; font-size: 26px;">2:34:46</li>
+                <li style="float: right;">Swapneel Roy</li>
+        </ul> 
+    </div>
+    <div class="side-nav">
+            <li title="Leaderboard" class="side-ul" [ngClass]="{'selected': id === 1 }" (click)="addClass(id=1)"><i class="material-icons" style="font-size: 40px;" >insert_chart</i></li>
+            <li title="Logout" class="side-ul" style="margin-top: 20px;" [ngClass]="{'selected': id === 2 }" (click)="addClass(id=2)"><i class="material-icons" style="font-size: 40px;">exit_to_app</i></li>          
+            <li title="Problem 1" class="side-ul" style="margin-top: 70px;" [ngClass]="{'selected': id === 3 }" (click)="addClass(id=3)"><i>1</i></li>
+            <li title="Problem 2" class="side-ul" [ngClass]="{'selected': id === 4 }" (click)="addClass(id=4)"><i>2</i></li>
+            <li title="Problem 3" class="side-ul" [ngClass]="{'selected': id === 5 }" (click)="addClass(id=5)" ><i>3</i></li> 
+            <li title="Problem 4" class="side-ul" [ngClass]="{'selected': id === 6 }" (click)="addClass(id=6)" ><i>4</i></li>
+            
+    </div>
+    <app-problem [qSelected]="questionSelected" [qs]="question"></app-problem>
+    <div class="right-tab">
+        <div class="top-right">
+                <div class="theme-header">
+                    Theme:
+                    <select class="code" [(ngModel)]="selectedTheme">
+                        <optgroup label="Light">
+                            <option *ngFor="let theme of themes.light" [value]="theme[1]">{{theme[0]}}</option>
+                        </optgroup>
+                        <optgroup label="Dark">
+                            <option *ngFor="let theme of themes.dark" [value]="theme[1]">{{theme[0]}}</option>
+                        </optgroup>
+                    </select>
+                </div>
+               <div class="code-header">
+                Language:
+                    <select class="code" style="width: 90px;" [(ngModel)]="selectedLang">
+                        <option *ngFor="let lang of language; index as i" [value]="i">{{lang.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <app-editor [activeTheme]="selectedTheme"  [qSelected]="questionSelected" [qs]="question" [lang]="language" [activeLang]="selectedLang"></app-editor>
+        </div>
+</div>

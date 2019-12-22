@@ -1,0 +1,19 @@
+<div class="problem">
+    <p class="heading">{{openQuestion.title}}</p>
+    <p class="caption">Objective:</p>
+    <p class="content" innerHTML="{{openQuestion.objective}}"></p>
+    <p class="caption">Task:</p>
+    <p class="content" innerHTML="{{openQuestion.task}}"></p>
+    <p class="caption">Constraints:</p>
+    <p class="content" innerHTML="{{openQuestion.constraints}}"></p>
+    <p class="caption">Input Format:</p>
+    <p class="content" innerHTML="{{openQuestion.input_format}}"></p>
+    <p class="caption">Output Format:</p>
+    <p class="content" innerHTML="{{openQuestion.output_format}}"></p>
+    <div *ngFor="let sample of openQuestion.samples; index as i">
+        <p class="caption">Sample Input {{i+1}}:</p>
+        <p class="content" innerHTML="{{sample.input}}"></p>
+        <p class="caption">Sample Output {{i+1}}:</p>
+        <p class="content" innerHTML="{{sample.output}}"></p>
+    </div>
+</div>
