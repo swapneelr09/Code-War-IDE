@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { ApiService } from '../../api.service';
+import { CookieService } from 'ngx-cookie-service';
 
 declare var ace : any;
 
@@ -22,7 +24,12 @@ export class EditorComponent implements OnInit {
   showInput = false;
   sessionStore :  any = []
   sessionRow: any;
-  constructor() { }
+  swipe : any;
+  view = "Compile"
+  compileData : any;
+  disply : any
+  submit :  any
+  constructor(private api : ApiService, private cookieService: CookieService) { }
 
   ngOnInit() {
     this.editor = ace.edit("editor");
@@ -77,10 +84,12 @@ export class EditorComponent implements OnInit {
    if('qSelected' in change){
     this.openInput = this.qs[this.qSelected].samples[0].input;
     this.sessionRow = this.qs.length*this.qSelected;
+    this.disply = "q"+this.qSelected
     this.setEditor()
    }
 
    if('activeLang' in change){
+    this.disply = "l"+this.activeLang 
     this.setEditor()
    }
 
@@ -89,6 +98,9 @@ export class EditorComponent implements OnInit {
   setEditor(){
     this.editor.setSession(this.sessionStore[parseInt(this.sessionRow) + parseInt(this.activeLang)]);
     this.editor.session.setMode("ace/mode/"+this.lang[this.activeLang].file);
+    this.swipe = "0";
+    this.view = "Compile";
+    this.compileData = ""
   }
   dispInput(event){
     if ( event.target.checked ) {
@@ -99,4 +111,48 @@ export class EditorComponent implements OnInit {
     }
   }
 
+  compileFunc(){
+    let self = this
+      this.api.compile(this.editor.getValue(), this.lang[this.activeLang].str, this.openInput).subscribe(data =>{
+        self.compileData = data
+        if(data == 0){
+          setTimeout(() => {
+            this.compileFunc()}, 5000)
+        }
+        else{
+          console.log(self.compileData)
+        }
+      },error  => {
+        console.log("Error", error);
+      })
+  }
+
+  submitFunc(){
+      this.api.submit(this.editor.getValue(), this.lang[this.activeLang].str, this.qSelected, JSON.parse(this.cookieService.get('User'))['email']).subscribe(data =>{
+        this.submit = data
+        if(data == 0){
+          setTimeout(() => {
+            this.submitFunc()}, 5000)
+        }
+      },error  => {
+        console.log("Error", error);
+      })
+  }
+
+  swipeDiv(){
+    if(this.view === "Compile"){
+      this.disply = new Date().getTime()
+      this.compileFunc()
+      this.swipe = "-53vw";
+      this.view = "Back";
+    }
+    else{
+      this.swipe = "0";
+      this.view = "Compile";
+    }
+  }
+
+  submitCode(submit){
+    this.submitFunc()
+  }
 }

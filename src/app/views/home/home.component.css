@@ -1,93 +1,147 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Bungee+Inline&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Varela);
 
-#vantajs{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  background-image: src("../../../assets/img/backgif.gif");
+.login{
+    height: 100%;
+    background: rgba(241, 242, 181, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 88, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(19, 80, 88, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 88, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 88, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 88, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(19, 80, 88, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f1f2b5', endColorstr='#135058', GradientType=1);
 }
 
-p{
-    color: blanchedalmond; 
-    
-}
 
-#login{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  min-height: 200px;
-  transform: translate(-50%,-50%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  padding: 30px 0 30px 0; 
-  font-family: 'Montserrat', sans-serif;
-  font-size: 35px;
-}
 
-.form-container input[type=email], .form-container input[type=password], .form-container input[type=text]{
-    margin:auto;
-    font-size: 20px;
-    display:block;
-    width: 400px;
-    margin-bottom:20px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(0,0,0,0.1);
-    color: #000;
+.relative {
+    position: relative;
   }
   
-  .form-container .active{
-    cursor: pointer;
-    margin: auto;
-    margin-top: 10px;
-    width: 400px;
-    font-size: 20px;
-    display:block;
-
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255,255,255,0.1);
-    transition: all 0.3s;
-    color: #080807;
-    letter-spacing: 2px;
-    font-weight: bold;
-  }
-  
-  .form-container .active:hover{
-    background-color: rgba(255,255,255,0.2);
-    transition: all 0.3s;
-  }
-  .logo{
-    margin-bottom: 10px;
+  .login-container-wrapper .logo,
+  .login-container-wrapper .welcome {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
     font-family: 'Bungee Inline', cursive;
   }
 
+  
+  .login-container-wrapper {
+    max-width: 400px;
+    margin: 10% auto 8%;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(57, 89, 116, 0.8);
+    box-shadow: 1px 1px 10px 1px #000000, 8px 8px 0px 0px #344454, 12px 12px 10px 0px #000000;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  .logo .fa {
+    font-size: 50px;
+  }
+  .login input:focus + .fa{
+    color:#fff;
+  }
+  .login-form .form-group {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  
+  .login-form .input-lg {
+    font-size: 16px;
+    height: 52px;
+    border-radius: 0;
+    padding-left: 10px;
 
-
-.login__input {
-	color: white;
-	font-size: 1.15rem;
-	width: 100%;
-	padding: .5rem 1rem;
-	border: 2px solid whitesmoke;
-	outline: none;
-	border-radius: 1.5rem;
-	background-color: rgba(255, 255, 255, 0.25);
-	letter-spacing: 1px;
-}
-
-.login__input:hover,
-.login__input:focus{
-	color: white;
-	border: 2px solid rgba(255, 255, 255, 0.5);
-	background-color: transparent;
-}
-
-
-*{
+  }
+  
+   input[type="email"],
+   input[type="text"],
+   input[type="password"],
+   input[type="number"],
+   input:focus {
+    background-color: rgba(40, 52, 67, 0.75);
+    border: 1px solid #4a525f;
+    color: #eee;
+    border-left: 4px solid #93a5ab;
+    height: 10px;
+    margin-bottom: 15px;
+    width: 300px;
+  }
+  
+   input:focus {
+    border-left: 4px solid #ccd8da;
+  }
+  
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    background-color: rgba(40, 52, 67, 0.75)!important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+    border-color: #FAFFBD;
+  }
+  
+   .checkbox label,
+   .checkbox a {
+    color: #ddd;
+  }
+  
+  .btn-success {
+    background-color: transparent;
+    background-image: none;
+    padding: 8px 50px;
+    border-radius: 0;
+    border: 2px solid #93a5ab;
+    box-shadow: inset 0 0 0 0 #7692A7;
+    -webkit-transition: all ease 0.8s;
+    -moz-transition: all ease 0.8s;
+    transition: all ease 0.8s;
     font-family: 'Audiowide', cursive;
+    font-size: larger;
+  }
+  
+  .btn-success:focus,
+  .btn-success:hover,
+  .btn-success.active,
+  .btn-success:active {
+    background-color: transparent;
+    border-color: #fff;
+    box-shadow: inset 0 0 100px 0 #7692A7;
+    color: #FFF;
+  }
+  #particles-js canvas {
+    display: block;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+    transition: opacity .8s ease, transform 1.4s ease;
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+}
+
+.message{
+  color: red;
+  margin-bottom: 10px;
+}
+
+ul{
+  font-family: 'Audiowide', cursive;
+  padding: 0;
+  margin: 0;
 }

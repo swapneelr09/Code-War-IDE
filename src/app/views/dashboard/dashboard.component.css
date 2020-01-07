@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Bungee+Inline&display=swap');
+
 
 .top-nav{
     background-color: dodgerblue;
@@ -120,6 +120,9 @@
     appearance: none;
     width: 150px;
     text-align: center;
+}
+.code  option{
+    color: black;
 }
 .code-header{
     color: white;

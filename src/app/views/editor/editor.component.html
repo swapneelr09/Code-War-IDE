@@ -1,9 +1,18 @@
-<div class="edit-wrapper" id="editor"></div>
+<div class="screen">
+    <div class="slider" [ngStyle]="{ 'left': swipe }">
+        <div class="edit-wrapper" id="editor"></div>
+        <div class="compile-wrapper">
+            <app-compiler [compile]="compileData" [submitData]="submit" (submit)=submitCode($event) [dis]="disply"></app-compiler>
+        </div>
+    </div>
+</div>
+
+
 <div class="bottom-right">
     <div class="b-r-content">
-        <input type="checkbox" (change)="dispInput($event)">
+        <input type="checkbox" (change)="dispInput($event)" >
         Custom Input
-        <button class="submit-btn">Submit</button>
+        <button class="submit-btn" (click)="swipeDiv()">{{view}}</button>
     </div> 
-    <div class="cust-input" *ngIf="showInput == true" contenteditable="true">{{openInput}}</div>                 
+    <textarea class="cust-input" [(ngModel)]="openInput" *ngIf="showInput == true" value="openInput" ></textarea>                 
 </div>

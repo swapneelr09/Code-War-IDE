@@ -1,0 +1,21 @@
+<div class="problem"> 
+    <p>Team Submissions</p>
+    <table class="submission table-striped">
+       <tbody>
+          <tr>
+             <th>Problem</th><th>Score</th><th>Code</th>
+          </tr>
+          <tr *ngFor="let item of data; index as i">
+             <td>#{{1*item.questionNo +1}}</td><td>{{item.score}}/{{item.fullmark}}</td><td><button (click)="showModal(i)">View</button></td>
+          </tr>
+          
+       </tbody>
+    </table>
+
+    <div id="myModal" class="modal" *ngIf="isVisible == true">
+      <div class="modal-content" >
+        <span class="close" (click)="closeModal()">&times;</span>  
+        <textarea class="form-control" rows="8" style="width: 100%;">{{code}}</textarea>
+      </div>
+  </div>
+</div>

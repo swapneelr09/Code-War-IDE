@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300i,400&display=swap');
+
+.wrapper{
+    margin: 10px 20px;
+    font-family: 'Audiowide', cursive;
+    transition: all 2s linear;
+}
+.compiler-msg{
+    width: 100%;
+    height: 35px;
+    border: 1px solid black;
+    background-color: rgba(203, 157, 251, 0.3);
+    box-shadow: inset 0 0 10px grey;
+    font-family: 'Source Code Pro', monospace;
+    padding-top: 5px;
+    padding-left: 10px;
+    box-sizing:border-box;
+}
+.output{
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+    overflow-y: auto;
+    background-color: #dfc8f7; 
+    box-shadow: inset 0 0 10px grey;
+    margin-bottom: 20px;
+    font-family: 'Source Code Pro', monospace;
+    overflow: auto;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing:border-box;
+    white-space: pre-wrap;
+}
+.submit{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom right, #c31432, #240b36);
+    color: #fff;
+    width: 120px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: 'Audiowide', cursive;
+    margin-left: 40%;
+  }
+  .testcase{
+    width: 100%;
+    text-align: center;
+    border-collapse:separate; 
+    border-spacing:0 5px; 
+  }
+  .testcase td, .testcase th{
+    padding: 10px;
+  }
+  .testcase .thead{
+    background-color: #CCCDCD;
+  }
+  .testcase .success{
+    background-color: #CBE2B4;
+  }
+  .testcase .fail{
+    background-color: #FDD3D9;
+  }
+  

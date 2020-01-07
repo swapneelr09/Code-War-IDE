@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../api.service';
 
+
 @Component({
   selector: 'app-problem',
   templateUrl: './problem.component.html',

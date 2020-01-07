@@ -1,0 +1,32 @@
+<div class="wrapper" [ngStyle]="{ 'display': disp? 'none' : 'block' }">
+    <p>Compiler message:</p>
+    <div class="compiler-msg">{{msg}}</div>
+    <p>Output:</p>
+    <div class="output">{{output}}</div>
+    <button class="submit" *ngIf="show == true" (click)="submitCode()">Submit</button>
+</div>
+
+<div class="wrapper" [ngStyle]="{ 'display': disp? 'block' : 'none' }">
+    <table class="testcase">
+       <tr class="thead">
+          <th>Test Case</th><th>Exec Code</th><th>Result</th>
+       </tr>
+       <tr *ngFor="let item of submitData; index as i" [ngClass]="{'success': item.passed, 'fail': !item.passed}">
+          <td>Test Case #{{i+1}}</td><td>{{item.type}}</td><td><span innerHTML={{setIcon(item.passed)}}></span></td>
+       </tr>
+       <tr class="thead">
+          <th colspan="3">Score : {{score}}/{{fullMark}}</th>
+       </tr>
+       <tr>
+          <td colspan="3" style="text-align:left;">
+             <ul type="none">
+                <li>CA - Correct Answer</li>
+                <li>WA - Wrong Answer</li>
+                <li>CE - Compiling Error</li>
+                <li>FSE - File Size Exceed</li>
+                <li>TLE - Time Limit Exceed</li>
+             </ul>
+          </td>
+       </tr>
+    </table>
+ </div>

@@ -4,12 +4,17 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { ProblemComponent } from './views/problem/problem.component';
 import { EditorComponent } from './views/editor/editor.component';
+import { CompilerComponent } from './views/compiler/compiler.component';
+import { LeaderboardComponent } from './views/leaderboard/leaderboard.component';
+import { SubmissionComponent } from './views/submission/submission.component';
+import { LogoutComponent } from './views/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,11 @@ import { EditorComponent } from './views/editor/editor.component';
     SignupComponent,
     DashboardComponent,
     ProblemComponent,
-    EditorComponent
+    EditorComponent,
+    CompilerComponent,
+    LeaderboardComponent,
+    SubmissionComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +47,14 @@ import { EditorComponent } from './views/editor/editor.component';
         path: 'dashboard',
         component: DashboardComponent
       }
+      ,
+      {
+        path: 'finish',
+        component: LogoutComponent
+      }
     ])
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

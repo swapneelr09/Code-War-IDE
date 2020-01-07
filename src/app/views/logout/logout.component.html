@@ -1,0 +1,16 @@
+<div class="login" id="particles-js"></div>
+
+<div>
+    <h1>Leaderboard</h1>
+
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            <tr class="header">
+                <td>Rank</td><td>Team</td><td>Score</td><td>Time</td>
+             </tr>
+             <tr *ngFor="let item of data; index as i">
+                <td>{{i+1}}</td><td>{{item.team}}</td><td>{{item.score}}</td><td>{{getTime(item.time)}}</td>
+             </tr>
+        </tbody>
+    </table>
+</div>

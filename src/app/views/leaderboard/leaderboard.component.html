@@ -1,0 +1,13 @@
+<div class="problem"> 
+    <p>Leaderboard</p>
+    <table class="submission table-striped">
+       <tbody>
+          <tr>
+             <th>Rank</th><th>Team</th><th>Score</th><th>Time</th>
+          </tr>
+          <tr *ngFor="let item of data; index as i">
+             <td>{{i+1}}</td><td>{{item.team}}</td><td>{{item.score}}</td><td>{{getTime(item.time)}}</td>
+          </tr>
+       </tbody>
+    </table>
+</div>
