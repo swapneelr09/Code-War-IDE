@@ -75,6 +75,7 @@ ngOnInit() {
     if(this.cookieService.check('User'))
     {
       this.name = JSON.parse(this.cookieService.get('User'))
+      let email = this.name['email']
       this.name = this.name['name']
       this.id = 3
       this.selectedTheme = this.themes.light[0][1]
@@ -86,12 +87,12 @@ ngOnInit() {
         this.language = data
         this.selectedLang = 0
       })
-
-      this.api.time().subscribe(data =>{
-        this.currentTime = data
-        this.currentTime = parseInt(this.currentTime)
-        this.startTime(this.currentTime)
-      })
+     
+        this.api.time().subscribe(data =>{
+          this.currentTime = data
+          this.currentTime = parseInt(this.currentTime)
+          this.startTime(this.currentTime, email)
+        })   
     }
     else{
       this.router.navigateByUrl('/');
@@ -118,15 +119,19 @@ ngOnInit() {
     
   }
 
-  startTime(current_time){
+  startTime(current_time, email){
     let userCookie = JSON.parse(this.cookieService.get('User'))
     if(userCookie['startedAt'] == ''){
       userCookie['startedAt'] = current_time
       this.startAt = current_time
-      this.cookieService.set( 'User', JSON.stringify(userCookie), 1/12);
+      this.cookieService.set( 'User', JSON.stringify(userCookie), 1/6);
     }
     else{
-      this.startAt = userCookie['startedAt']
+      let timeData = JSON.parse(this.cookieService.get('UserTime'))
+      let cur = parseInt(timeData['time'])
+      this.startAt = userCookie['startedAt'] + (current_time - cur)
+      userCookie['startedAt'] = this.startAt
+      this.cookieService.set( 'User', JSON.stringify(userCookie), 1/6);
     }
     let limit = 60*60*2  
     this.endAt = this.startAt + limit
@@ -141,12 +146,18 @@ ngOnInit() {
        var m = ("0" + Math.floor(d % 3600 / 60)).slice(-2);
        var s = ("0" + Math.floor(d % 3600 % 60)).slice(-2);
        self.time = h+" : "+m+" : "+s;
+       let UserTime = {
+         "email" : email,
+         "time" : current_time
+       }
+       self.cookieService.set( 'UserTime', JSON.stringify(UserTime), 1/6);
        current_time+=1;
     }, 1000);
   }
 
   endTime(){
     this.cookieService.delete('User');
+    this.cookieService.delete('UserTime');
     this.router.navigateByUrl('/finish');
   }
 }

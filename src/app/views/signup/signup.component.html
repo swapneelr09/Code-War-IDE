@@ -1,14 +1,29 @@
-<div id="vantajs"></div>
+<div class="login" id="particles-js"></div>
 
-<div id="login" class="form-container">
-    <div class="logo">CODE WAR</div>
-    <form action="" class="form-login">
-            <input id="login-input-user" class="login__input" type="text" placeholder="Name"/>
-            <input id="login-input-user" class="login__input" type="email" placeholder="Email"/>
-            <input id="login-input-user" class="login__input" type="text" placeholder="Team"/>
-            <input id="login-input-password" class="login__input" type="text" placeholder="Mobile"/>
-            <button type="button" class="active">Signup</button>
-            <button type="button" routerLink="/" class="active">Login</button>
-        </form>
+<div class="container">
+    <div class="login-container-wrapper clearfix">
+        <div>
+            <div class="welcome">CODE WAR</div>
+            <div class="message">{{msg}}</div>
+            <form #loginForm="ngForm" method="post" class="form-horizontal login-form" (ngSubmit)="loginUser(loginForm)">
+                <div class="form-group relative">
+                    <input id="login_name" class="form-control input-lg" name="name" type="text" placeholder="Name" required ngModel>
+                </div>
+                <div class="form-group relative">
+                    <input id="login_name" class="form-control input-lg" name="email" type="text" placeholder="Email" required ngModel>
+                </div>
+                <div class="form-group relative">
+                    <input id="login_name" class="form-control input-lg" name="team" type="text" placeholder="Team" required ngModel>
+                </div>
+                <div class="form-group relative password">
+                    <input id="login_password" class="form-control input-lg" type="text" name="phone" placeholder="Phone" required ngModel>
+                </div>
+                    <div class="form-group">
+                        <button id="button" type="submit" name="submit" class="btn btn-success btn-lg btn-block">Register</button>
+                    </div>     
+            </form>
+            <p style="cursor: pointer;">Existing User? Please <strong routerLink="/">Login</strong></p>
+        </div>
+    </div>
 </div>
 

@@ -48,13 +48,28 @@ export class HomeComponent implements OnInit {
   }
 
   startTime(){
-    this.cookieService.set( 'User', JSON.stringify(this.user));
-    this.api.start(this.user['email']).subscribe(data => {
-    
-    },error  => {
-        console.log("Error", error);
-    })
+    if(this.cookieService.check('User')){
+      let email = JSON.parse(this.cookieService.get('User'))
+      email = email['email']
+      if(this.user['email'] === email){
+        this.router.navigateByUrl('/dashboard');
+      }
+      else{
+        this.newUser()
+      }
+    }
+    else{
+      this.newUser()
+    }
     this.router.navigateByUrl('/dashboard');
   }
 
+  newUser(){
+    this.cookieService.set( 'User', JSON.stringify(this.user));
+        this.api.start(this.user['email']).subscribe(data => {
+        
+        },error  => {
+            console.log("Error", error);
+        })
+  }
 }

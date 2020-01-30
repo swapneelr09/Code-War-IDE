@@ -53,6 +53,15 @@ export class ApiService {
     return this.http.post('http://localhost/kritanjApi/login/', body)
   }
 
+  signup(email, phone, name, team){
+    let body = new FormData();
+    body.append('email', email);
+    body.append('mobile', phone);
+    body.append('name', name);
+    body.append('team', team);
+    return this.http.post('http://localhost/kritanjApi/signup/', body)
+  }
+
   mySubmission(email){
     let body = new FormData();
     body.append('email', email);
