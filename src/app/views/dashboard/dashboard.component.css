@@ -35,6 +35,7 @@
     font-family: 'Bungee Inline', cursive;
     float: left;
     font-size: 24px;
+    margin: 0;
 }
 .side-ul{
     color: darkgray;

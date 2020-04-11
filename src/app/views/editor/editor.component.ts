@@ -15,6 +15,7 @@ export class EditorComponent implements OnInit {
   @Input() qSelected;
   @Input() lang;
   @Input() activeLang;
+  @Input() now;
   curQs : any;
   curTheme : any;
   curLang : any;
@@ -64,7 +65,6 @@ export class EditorComponent implements OnInit {
   }
 
   ngOnChanges(change){
-   
     if('lang' in change){
     this.openInput = this.qs[this.qSelected].samples[0].input;
     this.sessionRow = this.qs.length*this.qSelected
@@ -128,7 +128,7 @@ export class EditorComponent implements OnInit {
   }
 
   submitFunc(){
-      this.api.submit(this.editor.getValue(), this.lang[this.activeLang].str, this.qSelected, JSON.parse(this.cookieService.get('User'))['email']).subscribe(data =>{
+      this.api.submit(this.editor.getValue(), this.lang[this.activeLang].str, this.qSelected, JSON.parse(this.cookieService.get('User'))['email'], this.now).subscribe(data =>{
         this.submit = data
         if(data == 0){
           setTimeout(() => {

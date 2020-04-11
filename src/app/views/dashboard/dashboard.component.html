@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="top-nav">
         <ul class="nav-content">
-                <li class="title">CODE WAR</li>
+                <li style="float: left; font-size: 24px;">{{title}}</li>
                 <li style="letter-spacing: 5px; font-size: 26px;">{{time}}</li>
                 <li style="float: right;">{{name}}</li>
         </ul> 
@@ -14,7 +14,6 @@
             <li title="Problem 2" class="side-ul" [ngClass]="{'selected': id === 4 }" (click)="addClass(id=4)"><i>2</i></li>
             <li title="Problem 3" class="side-ul" [ngClass]="{'selected': id === 5 }" (click)="addClass(id=5)" ><i>3</i></li> 
             <li title="Problem 4" class="side-ul" [ngClass]="{'selected': id === 6 }" (click)="addClass(id=6)" ><i>4</i></li>
-            
     </div>
     <app-leaderboard [ngStyle]="{'display' : id == 1 ? 'block' : 'none' }" [data]="leaderboardData" ></app-leaderboard>
     <app-submission [ngStyle]="{'display' : id == 7 ? 'block' : 'none' }" [data]="submissionData"></app-submission>
@@ -40,6 +39,6 @@
                     </select>
                 </div>
             </div>
-            <app-editor [activeTheme]="selectedTheme"  [qSelected]="questionSelected" [qs]="question" [lang]="language" [activeLang]="selectedLang"></app-editor>
+            <app-editor [activeTheme]="selectedTheme"  [qSelected]="questionSelected" [qs]="question" [lang]="language" [activeLang]="selectedLang" [now]="d"></app-editor>
         </div>
 </div>

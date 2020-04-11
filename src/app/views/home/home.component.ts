@@ -17,8 +17,7 @@ export class HomeComponent implements OnInit {
   user : any
   constructor(private api : ApiService, private router: Router, private cookieService: CookieService) { }
 
-  ngOnInit() {    //VANTA.NET({ el: "#vantajs" })
-    //VANTA.NET("#vantajs");
+  ngOnInit() {   
     particlesJS.load('particles-js', 'assets/particles.json', null);
   }
 

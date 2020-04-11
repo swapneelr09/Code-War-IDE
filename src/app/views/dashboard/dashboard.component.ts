@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  section = "Ok";
+  title = "CODE WAR";
   test : any = []
   id : number;
   question : any = [];
@@ -21,8 +21,11 @@ export class DashboardComponent implements OnInit {
   interval : any
   time : any
   name = ""
+  d : any
   leaderboardData : any
   submissionData : any
+  timeData : any
+  mail : any
   public selectedTheme;
   public selectedLang;
   themes = { dark: [
@@ -76,6 +79,7 @@ ngOnInit() {
     {
       this.name = JSON.parse(this.cookieService.get('User'))
       let email = this.name['email']
+      this.mail = email
       this.name = this.name['name']
       this.id = 3
       this.selectedTheme = this.themes.light[0][1]
@@ -88,11 +92,12 @@ ngOnInit() {
         this.selectedLang = 0
       })
      
-        this.api.time().subscribe(data =>{
-          this.currentTime = data
-          this.currentTime = parseInt(this.currentTime)
-          this.startTime(this.currentTime, email)
-        })   
+      this.api.userTime(email).subscribe(data =>{
+        this.timeData = data
+        this.startTime(email)
+      })
+
+        
     }
     else{
       this.router.navigateByUrl('/');
@@ -119,45 +124,41 @@ ngOnInit() {
     
   }
 
-  startTime(current_time, email){
-    let userCookie = JSON.parse(this.cookieService.get('User'))
-    if(userCookie['startedAt'] == ''){
-      userCookie['startedAt'] = current_time
-      this.startAt = current_time
-      this.cookieService.set( 'User', JSON.stringify(userCookie), 1/6);
+  startTime(email){
+    const self = this
+    if(this.timeData['updateTime'] == ''){
+        self.d = 60*60*2
     }
     else{
-      let timeData = JSON.parse(this.cookieService.get('UserTime'))
-      let cur = parseInt(timeData['time'])
-      this.startAt = userCookie['startedAt'] + (current_time - cur)
-      userCookie['startedAt'] = this.startAt
-      this.cookieService.set( 'User', JSON.stringify(userCookie), 1/6);
-    }
-    let limit = 60*60*2  
-    this.endAt = this.startAt + limit
-    const self = this;          
+      self.d = Number(this.timeData['updateTime'])
+    }   
+    var check = -1      
     this.interval = setInterval(function(){
-       if(self.endAt - current_time <= 0){
+       if(self.d <= 0){
           console.log('times up');
-          this.endTime()
+          self.endTime()
        }
-       var d = Number((self.endAt - current_time));
-       var h = ("0" + Math.floor(d / 3600)).slice(-2);
-       var m = ("0" + Math.floor(d % 3600 / 60)).slice(-2);
-       var s = ("0" + Math.floor(d % 3600 % 60)).slice(-2);
+       var h = ("0" + Math.floor(self.d / 3600)).slice(-2);
+       var m = ("0" + Math.floor(self.d % 3600 / 60)).slice(-2);
+       var s = ("0" + Math.floor(self.d % 3600 % 60)).slice(-2);
+        if( parseInt(m) % 2 == 0 && parseInt(m) != check){
+          self.updateData(email, String(self.d))
+          check = parseInt(m)
+          console.log(check)
+        }
        self.time = h+" : "+m+" : "+s;
-       let UserTime = {
-         "email" : email,
-         "time" : current_time
-       }
-       self.cookieService.set( 'UserTime', JSON.stringify(UserTime), 1/6);
-       current_time+=1;
+       self.d-=1;
     }, 1000);
   }
 
   endTime(){
+    clearInterval(this.interval);
     this.cookieService.delete('User');
-    this.cookieService.delete('UserTime');
+    this.updateData(this.mail, '')
     this.router.navigateByUrl('/finish');
+  }
+
+  updateData(email, d){
+    this.api.changeTime(email, String(d)).subscribe(data =>{})
   }
 }

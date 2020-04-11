@@ -52,7 +52,7 @@ import { LogoutComponent } from './views/logout/logout.component';
         path: 'finish',
         component: LogoutComponent
       }
-    ])
+    ], { useHash : true})
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
