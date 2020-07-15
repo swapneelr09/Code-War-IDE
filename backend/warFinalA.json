@@ -1,0 +1,68 @@
+[
+
+  {
+    "testcase": [
+      {
+        "input": "7\n0 0 1 0 0 1 0",
+        "output": "4",
+        "mark": "5"
+      },
+      {
+        "input": "9\n0 1 0 0 0 1 0 0 0",
+        "output": "4",
+        "mark": "20"
+      }
+    ]
+  },
+  
+  {
+    "testcase": [
+      {
+        "input": "3\n1 4\n2 5\n7 9",
+        "output": "False",
+        "mark": "5"
+      },
+      {
+        "input": "5\n1 3\n2 4\n3 7\n8 12\n14 16",
+        "output": "False",
+        "mark": "10"
+      },
+      {
+        "input": "4\n5 8\n9 12\n5432 5432\n6 7",
+        "output": "True",
+        "mark": "10"
+      }
+    ]
+  },
+
+  {
+    "testcase": [
+      {
+        "input": "10\n0 1 -2 3 4 0 5 -27 9 0",
+        "output": "1 -2 3 4 5 -27 9 0 0 0 ",
+        "mark": "5"
+      },
+      {
+        "input": "10\n0 0 -2 -3 -4 0 -5 -27 -9 0",
+        "output": "-2 -3 -4 -5 -27 -9 0 0 0 0 ",
+        "mark": "20"
+      }
+    ]
+  },
+
+  {
+    "testcase": [
+      {
+        "input": "AABAAB",
+        "output": "2",
+        "mark": "5"
+      },
+      {
+        "input": "ABBBBABAAB",
+        "output": "ABABAB",
+        "mark": "20"
+      }
+    ]
+  }
+
+]

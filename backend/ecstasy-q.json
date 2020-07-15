@@ -1,0 +1,119 @@
+[
+  
+  {
+    "title": "Pattern Decoration",
+
+    "objective": "<p>Jade is fond of Patterns, but he is unable to find the logic behind the following pattern.\n   0 \n  1 2 \n 3 4 5 \n6 7 8 9\n<em>(This is the generated pattern of 4 lines)</p>",
+
+    "task": "<p>You are given an integer <strong>n</strong>, you have to print the generated pattern for <strong>n</strong> number of lines.</p>",
+
+    "constraints": "<p>1 &lt; = n &lt; = 10000</p>",
+
+    "input_format": "<p>An Integer <strong>n</strong>.</p>",
+
+    "output_format": "<p>Print the pattern for <strong>n</strong> lines.</p>",
+
+    "samples": [
+      {
+        "input": "4",
+        "output": "   0 \n  1 2 \n 3 4 5 \n6 7 8 9 \n",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "4",
+        "output": "   0 \n  1 2 \n 3 4 5 \n6 7 8 9 \n"
+      }
+    ]
+  },
+
+  {
+    "title": "Find the Culprit.",
+
+    "objective": "<p>Check if a word is present in a sentence.</p>",
+
+    "task": "<p>Given a sentence as a string <strong>str</strong> and a word <strong>word</strong>, the task is to check if the word is present in <strong>str</strong> or not. </p>",
+
+    "constraints": "<p><strong>1 &lt;= str &lt;= 10^5</strong></p>",
+
+    "input_format": "<p>The first line contains an String &nbsp;<strong>str</strong> <br />The next line contains a word <strong>w</strong></p>",
+
+    "output_format": "<p>Print <strong>Yes</strong> if the word is present, or else print </strong>No</strong></p>",
+
+    "samples": [
+      {
+        "input": "I love NiT\nlove",
+        "output": "Yes",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "I love NiT\nlove",
+        "output": "Yes"
+      }
+    ]
+  },
+
+  {
+    "title": "Leap Year",
+
+    "objective": "<p>You will be given an year. Find whether the year is a <strong>Leap Year</strong> or not.</p>",
+
+    "task": "<p>Given an integer <strong>y</strong>. Print <strong>Yes</strong> if the year is a leap year or else <strong>No</strong>.</p>",
+
+    "constraints": "",
+
+    "input_format": "<p>An Integer <strong>y</strong></p>",
+
+    "output_format": "<p>Print <strong>Yes</strong> if the year is a leap year or else print <strong>No</strong></p>",
+
+    "samples": [
+      {
+        "input": "2016",
+        "output": "Yes",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "Hello Codewar",
+        "output": "leHlo doCawer"
+      }
+    ]
+  },
+
+  {
+    "title": "Niven Number",
+
+    "objective": "<p>Write a program to list all Niven numbers between two given positive numbers.</p>",
+
+    "task": "<p>Given two inputs ‘a’ and ‘b’, your task is to print all the niven numbers within the given range.\nA niven number is the number which is divisible by the sum of its own digits.</p>",
+
+    "constraints": "<p>1&lt;=a&lt;=10^5<br>1&lt;=b&lt;=10^5</p>",
+
+    "input_format": "<p>The input will be of single line containing two inputs ‘a’ and ‘b’.</p>",
+
+    "output_format": "<p>Print all the Niven numbers within the given range.</p>",
+
+    "samples": [
+      {
+        "input": "9 12",
+        "output": "9 10 12",
+        "explaination": ""
+      }
+    ],
+    
+    "testcase": [
+      {
+        "input": "9 12",
+        "output": "9 10 12"
+      }
+    ]
+  }
+
+]

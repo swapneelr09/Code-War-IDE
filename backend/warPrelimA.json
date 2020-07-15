@@ -1,0 +1,79 @@
+[
+  
+  {
+    "testcase": [
+      {
+        "input": "20",
+        "output": "2",
+        "mark": "5"
+      },
+      {
+        "input": "207",
+        "output": "2",
+        "mark": "10"
+      },
+      {
+        "input": "23",
+        "output": "1",
+        "mark": "10"
+      }
+    ]
+  },
+
+  {
+    "testcase": [
+      {
+        "input": "4 6",
+        "output": "******\n*    *\n*    *\n******",
+        "mark": "5"
+      },
+      {
+        "input": "7 14",
+        "output": "**************\n*            *\n*            *\n*            *\n*            *\n*            *\n**************",
+        "mark": "20"
+      }
+    ]
+  },
+
+  {
+    "testcase": [
+      {
+        "input": "hello Codewar",
+        "output": "hfllpL Cpdfwbr",
+        "mark": "5"
+      },
+      {
+        "input": "My number is 99854",
+        "output": "My nvmbfrL jsL 99854",
+        "mark": "10"
+      },
+      {
+        "input": "coding is My Life!",
+        "output": "cpdjngL jsL My Ljff!",
+        "mark": "10"
+      }
+    ]
+  },
+
+  {
+    "testcase": [
+      {
+        "input": "aabcbcdbca",
+        "output": "dbca",
+        "mark": "5"
+      },
+      {
+        "input": "zzzccjjkkcccckjccjjkz",
+        "output": "cjjkz",
+        "mark": "10"
+      },
+      {
+        "input": "aabbccddaaabbbcccdddaaaabbbbccccdddd",
+        "output": "aabbccdd",
+        "mark": "10"
+      }
+    ]
+  }
+
+]
+

@@ -1,0 +1,119 @@
+[
+  
+  {
+    "title": "Divide By Prime",
+
+    "objective": "<p>Ricky is very impressed after learning to check divisibility of any number. Now, he wants to count the number of prime divisors of any number. Can you help him to do it?</p>",
+
+    "task": "<p>You are given an integer <strong>n</strong>, you have to print the number of <strong>prime divisors</strong> of the integer</p>",
+
+    "constraints": "<p>1 &lt; = n &lt; = 10000</p>",
+
+    "input_format": "<p>An Integer <strong>n</strong>.</p>",
+
+    "output_format": "<p>Total number of <strong>Prime Divisors</strong></p>",
+
+    "samples": [
+      {
+        "input": "20",
+        "output": "2",
+        "explaination": "<p>The prime divisors of 20 are 2 and 5</p>"
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "20",
+        "output": "2"
+      }
+    ]
+  },
+
+  {
+    "title": "Swimming Pool",
+
+    "objective": "<p>Your friend Alina is an Architect student. She wants to play with you but her mother will not allow her until she completes her homework. Please help her do it.</p>",
+
+    "task": "<p>Given a height <strong>h</strong> and width <strong>w</strong>, design the outline of the Swimming pool.</p>",
+
+    "constraints": "<p><strong>1 &lt;= h &lt;= 10^2</strong></p><p><strong>1 &lt;= w &lt;= 10^2</strong></p>",
+
+    "input_format": "<p>The height <strong>h</strong> and width <strong>w</strong></p>",
+
+    "output_format": "<p>Print the outline of the Swimming Pool</p>",
+
+    "samples": [
+      {
+        "input": "4 6",
+        "output": "* * * * * * \n*           *\n*           *\n* * * * * * ",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "4 6",
+        "output": "* * * * * * \n*           *\n*           *\n* * * * * * "
+      }
+    ]
+  },
+
+  {
+    "title": "Bumble Jumble",
+
+    "objective": "<p>You will be given a sentence, make a bumble jumble sentence after doing the given modifications</p>",
+
+    "task": "<p>Given a sentence, modify it in the following way:\na) Every occurance of a vowel will be replaced by its immediate next character in the English alphabet.\nb) If any word starts with lowercase, add 'L' to its end.</p>",
+
+    "constraints": "1 &lt;= s &lt;= 10^5",
+
+    "input_format": "<p>A string <strong>s</strong></p>",
+
+    "output_format": "<p>Print the string, after performing the given modifications.</p>",
+
+    "samples": [
+      {
+        "input": "hello Codewar",
+        "output": "hfllpL Cpdfwbr",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "hello Codewar",
+        "output": "hfllpL Cpdfwbr"
+      }
+    ]
+  },
+
+  {
+    "title": "Into It",
+
+    "objective": "<p>Find the smallest substring which contains all the distinct characters.</p>",
+
+    "task": "<p>You are given a string, you have to find the smallest substring which contains all the distinct characters of the given string.</p>",
+
+    "constraints": "<p>1&lt;=s&lt;=10^5</p>",
+
+    "input_format": "<p>A string 's'</p>",
+
+    "output_format": "<p>Print the required substring</p>",
+
+    "samples": [
+      {
+        "input": "aabcbcdbca",
+        "output": "dbca",
+        "explaination": ""
+      }
+    ],
+    
+    "testcase": [
+      {
+        "input": "aabcbcdbca",
+        "output": "dbca"
+      }
+    ]
+  }
+
+]

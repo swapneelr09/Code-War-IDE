@@ -1,0 +1,117 @@
+[
+  
+  {
+    "title": "Thunder Cloud",
+
+    "objective": "<p>Emma is playing a new mobile game that starts with consecutively numbered clouds. Some of the clouds are thunderheads and others are cumulus. She can jump on any cumulus cloud having a number that is equal to the number of the current cloud plus 1 or 2. She must avoid the thunderheads. Determine the minimum number of jumps it will take Emma to jump from her starting postion to the last cloud. It is always possible to win the game. For each game, Emma will get an array of clouds numbered 0 if they are safe or 1 if they must be avoided. For example, c=[0,1,0,0,0,1,1] indexed from 0...6. The number on each cloud is its index 1 to 5 in the list so she must avoid the clouds at indexes and . She could follow the following two paths: 0->2->4->6 or 0->2->3->4->6. The first path takes jumps while the second takes 3 while the other one takes 4.</p>",
+
+    "task": "",
+
+    "constraints": "<p>2&lt;=n&lt;=10^2</p>",
+
+    "input_format": "<p>First line contains an integer 'n' representing number of elements. Next line contains 'n' space generated integers.</p>",
+
+    "output_format": "<p>Print the minimum number of jumps needed to win the game.</p>",
+
+    "samples": [
+      {
+        "input": "7\n0 0 1 0 0 1 0",
+        "output": "4",
+        "explaination": ""
+      }
+    ],
+    
+    "testcase": [
+      {
+        "input": "7\n0 0 1 0 0 1 0",
+        "output": "4"
+      }
+    ]
+  },
+  
+  {
+    "title": "Schedule Appointments",
+
+    "objective": "<p>Ravi is a very busy persons with lots of Appointments to attend, can you help him Schedule them?</p>",
+
+    "task": "<p>Given an array of intervals representing 'n' appointments, find out he can attend all the appointments</p>",
+
+    "constraints": "<p>1 &lt; = n &lt; = 10000</p>",
+
+    "input_format": "<p>First line contains integer, representing number of appointments, Next 'n' lines conatins starting time and ending time of the appointments</p>",
+
+    "output_format": "<p>True if he can attend all the appointments or else False</p>",
+
+    "samples": [
+      {
+        "input": "3\n1 4\n2 5\n7 9",
+        "output": "False",
+        "explaination": "<p>Since [1, 4] and [2,5] overlap, he cannot attend</p>"
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "3\n1 4\n2 5\n7 9",
+        "output": "False"
+      }
+    ]
+  },
+
+  {
+    "title": "Swipe Side",
+
+    "objective": "<p>Push all the no zeroes of an array towards the end.</p>",
+
+    "task": "<p>Given an unsorted array of integers,you have to move the elements of the array in a way that all the zeroes are moved to the end and all the non-zero elements are moved to the front. The non-zero elements must be ordered in their order of appeaance.</p>",
+
+    "constraints": "<p><strong>1 &lt;= n &lt;= 10^3</strong></p><p><strong>-10^4 &lt;= arr &lt;= 10^4</strong></p>",
+
+    "input_format": "<p>First line contains an integer 'n' representing number of elements. Next line contains 'n' space generated integers.</p>",
+
+    "output_format": "<p>An array</p>",
+
+    "samples": [
+      {
+        "input": "10\n0 1 -2 3 4 0 5 -27 9 0",
+        "output": "1 -2 3 4 5 -27 9 0 0 0 ",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "10\n0 1 -2 3 4 0 5 -27 9 0",
+        "output": "1 -2 3 4 5 -27 9 0 0 0 "
+      }
+    ]
+  },
+
+  {
+    "title": "Normalization",
+
+    "objective": "<p>Remove all the adjascent characters from a given string</p>",
+
+    "task": "<p>You are given a string containing characters A and B only. Your task is to change it to a string such that there are no matching adjascent characters. To do this, you are allowed to delete zero or more characters in the string.</p>",
+
+    "input_format": "<p>A string <strong>s</strong></p>",
+
+    "output_format": "<p>Print the minimum number of deletions require.</p>",
+
+    "samples": [
+      {
+        "input": "AABAAB",
+        "output": "2",
+        "explaination": "from AABAAB Remove an A from positions 0 and 3 to make s=ABAB in 2 deletions."
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "AABAAB",
+        "output": "2"
+      }
+    ]
+  }
+
+]

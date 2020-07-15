@@ -1,0 +1,119 @@
+[
+
+  {
+    "title": "Bumble Jumble",
+
+    "objective": "<p>You will be given a sentence. Form another Bumble Jumble string where every <strong>nth</strong> character is swapped with <strong>(n+2)th</strong> if possible, while preserving the sequence of the words and spaces.</p>",
+
+    "task": "<p>Given an string <strong>s</strong> i.e <strong>'Hello Codewar'</strong> without quotes. Swap H and l, C and d, e and a. So the resulting string will be <strong>leHlo doCawer</strong>. Print the result string.</p>",
+
+    "constraints": "",
+
+    "input_format": "<p>The first line string,&nbsp;<strong>s</strong></p>",
+
+    "output_format": "<p>Print the resultant Bumble Jumble string.</p>",
+
+    "samples": [
+      {
+        "input": "Hello Codewar",
+        "output": "leHlo doCawer",
+        "explaination": "<p>Swap H and l, C and d, e and a.</p>"
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "Hello Codewar",
+        "output": "leHlo doCawer"
+      }
+    ]
+  },
+  
+  {
+    "title": "Find the culprit.",
+
+    "objective": "<p>Find the smallest missing positive number in a given unsorted array.</p>",
+
+    "task": "<p>Given an unsorted array <strong>a</strong> of size Integer <strong>n</strong>. You have to find the smallest missing positive number and print it.</p>",
+
+    "constraints": "<p><strong>2 &lt;= n &lt;= 10^4</strong></p>",
+
+    "input_format": "<p>The first line contains an Integer &nbsp;<strong>n</strong> <br />The next line contains <strong>n</strong>&nbsp;space-separated integers <strong>a[i]</strong>&nbsp;</p>",
+
+    "output_format": "<p>An integer which is smallest positive missing number.</p>",
+
+    "samples": [
+      {
+        "input": "7\n1 12 5 111 200 1000 10",
+        "output": "2",
+        "explaination": "<p>Smallest number is 1 and smallest missing positive number is 2.</p>"
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "7\n1 12 5 111 200 1000 10",
+        "output": "2"
+      }
+    ]
+  },
+
+  {
+    "title": "Game of Matrix",
+
+    "objective": "<p>Given a square matrix, print it in spiral form.</p>",
+
+    "task": "<p>Given a matrix <strong>m</strong> (2D array). Traverse clockwise and print it in spiral form like the image below : - <br> <img src='./api/matrix.png' style='max-width:100%;'></p>",
+
+    "constraints": "<p>Must be square matrix.</p>",
+
+    "input_format": "<p>The first line contains one integers,&nbsp;<strong>n</strong>, the size of square matrix.<br />The next line contains values of each row seperated by space <strong>m[i][j]</strong></p>",
+
+    "output_format": "<p>Spiral value of the matrix seperated by space.</p>",
+
+    "samples": [
+      {
+        "input": "4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16",
+        "output": "1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10",
+        "explaination": ""
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16",
+        "output": "1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10"
+      }
+    ]
+  },
+
+  {
+    "title": "Array Left Rotation",
+
+    "objective": "<p>A left rotation operation on an array shifts each of the array's elements 1 unit to the left. For example, if <strong>2</strong> left rotations are performed on array <strong>[1,2,3,4,5]</strong>, then the array would become <strong>[3,4,5,1,2]</strong>.</p>",
+
+    "task": "<p>Given an array <strong>a</strong> of <strong>n</strong> integers and a number, <strong>d</strong> , perform <strong>d</strong> left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.</p>",
+
+    "constraints": "<p><strong>1 &lt;= n &lt;= 10^5</strong></p>\n<p><strong>1 &lt;= d &lt;= n</strong></p>\n<p><strong>1 &lt;= a[i] &lt;= 10^6</strong></p>",
+
+    "input_format": "<p>The first line contains two space-separated integers <strong>n&nbsp;</strong>and <strong>d</strong>, the size of <strong>a&nbsp;</strong>and the number of left rotations you must perform. <br /> The second line contains <strong>n</strong> space-separated integers <strong>a[i]</strong>.</p>",
+
+    "output_format": "<p>Print a single line of <strong>n</strong> space-separated integers denoting the final state of the array after performing <strong>d</strong> left rotations.</p>",
+
+    "samples": [
+      {
+        "input": "5 4\n1 2 3 4 5",
+        "output": "5 1 2 3 4",
+        "explaination": "When we perform <strong>d=4</strong> left rotations, the array undergoes the following sequence of changes: <br> <strong> [1,2,3,4,5] --> [2,3,4,5,1] --> [3,4,5,1,2]<br> --> [4,5,1,2,3] --> [5,1,2,3,4] </strong>"
+      }
+    ],
+
+    "testcase": [
+      {
+        "input": "5 4\n1 2 3 4 5",
+        "output": "5 1 2 3 4"
+      }
+    ]
+  }
+
+]

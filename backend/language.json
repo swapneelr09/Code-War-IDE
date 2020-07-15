@@ -1,0 +1,26 @@
+[
+  {
+    "name": "C",
+    "str": "c",
+    "file": "c_cpp",
+    "code": "\n/* \n*  This is a template code. \n*  Remove the below code and write your code.\n*  Use Standard Input Output.\n*/\n\n#include <stdio.h>\n\nint main()\n{\n    int testInteger;\n    scanf(\"%d\",&testInteger);  \n    printf(\"%d\",testInteger);\n    return 0;\n}\n\t"
+  },
+  {
+    "name": "C++",
+    "str": "cpp",
+    "file": "c_cpp",
+    "code": "\n/* \n*  This is a template code. \n*  Remove the below code and write your code.\n*  Use Standard Input/Output.\n*/\n\n#include <iostream>\nusing namespace std;\n\nint main() \n{\n    cout << \"Hello, World!\";\n    return 0;\n}\n\t"
+  },
+  {
+    "name": "Java",
+    "str": "java",
+    "file": "java",
+    "code": "\n/* \n*  This is a template code. \n*  Remove the below code and write your code.\n*  Use Standard Input/Output.\n*  NOTE : CLASS NAME MUST BE Codewar.\n*/\n\nimport java.util.Scanner;\n\nclass Codewar {\n    public static void main(String[] args) {\n    \t\n    \tScanner input = new Scanner(System.in);\n    \tint number = input.nextInt();\n    \tSystem.out.println(number);\n    }\n}\n\t"
+  },
+  {
+    "name": "Python 3.7",
+    "str": "python3",
+    "file": "python",
+    "code": "\n'''\n*  This is a template code. \n*  Remove the below code and write your code.\n*  Use Standard Input/Output.\n'''\n\nimport math\n\nprint(math.pi)\nnum = input()\nprint(num)\n\t"
+  }
+]
